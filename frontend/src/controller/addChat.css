@@ -27,6 +27,8 @@
     position: absolute;
     width: 100%;
     bottom: 10px;
+    background: var(--third);
+    height: 70px;
 }
 .addchat-container>.image{
  display: inline-block;
@@ -38,6 +40,9 @@
     min-height:100px ;
     border-radius: 5px;
     margin-left: 10px;
+    position: absolute;
+    top: -150px;
+
 }
 .addchat-container>.image>.clear{
     position: absolute;
