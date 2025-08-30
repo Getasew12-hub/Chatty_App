@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import "./Navbar.CSS"
+import "./Navbar.css"
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import ModeNightOutlinedIcon from '@mui/icons-material/ModeNightOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';

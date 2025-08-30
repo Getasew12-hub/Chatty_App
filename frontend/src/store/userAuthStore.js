@@ -3,7 +3,7 @@ import axios from "../libe/axios"
 import toast from "react-hot-toast";
 import {io} from "socket.io-client"
 
-const BASE_URL='http://localhost:5000'
+const BASE_URL=import.meta.mode=='development' ? 'http://localhost:5000' :'/';
 const userStore =create((set,get)=>({
     lodding:false,
     user:null,
