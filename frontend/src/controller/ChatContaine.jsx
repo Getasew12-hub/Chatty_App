@@ -1,5 +1,5 @@
 import React from 'react'
-import "./chatContaine.css"
+import "./ChatContaine.css"
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 
 function ChatContaine() {
