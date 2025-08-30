@@ -1,0 +1,75 @@
+.skeleten-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+     padding: 10px;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+.skeleten-container>.item{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+   
+    width: 100%;
+}
+.skeleten-container>.right{
+    justify-content: flex-end;
+}
+.skeleten-container>.left{
+    justify-content: flex-start;
+}
+.skeleten-container>.item>.avater{
+    height: 35px;
+    width: 35px;
+    background:linear-gradient(to left,var(--background) 0%,rgb(38, 57, 74) 50%,var(--background) 100%);
+    background-size: 200% 100%;
+    border-radius: 50px;
+    animation: skeleten 5s linear infinite ;
+    flex-shrink: 0;
+
+}
+.skeleten-container>.item>.message{
+  height: 50px;
+  width:300px;
+  border-radius: 30px;
+  background:linear-gradient(to left,var(--background) 0%,rgb(38, 57, 74) 50%,var(--background));
+   background-size: 200% 100%;
+    border-radius: 50px;
+    animation: skeleten 2s linear infinite ;
+}
+@keyframes skeleten{
+    from {
+   background-position: 100% 0;
+    }to{
+  background-position: -100% 0;
+    }
+}
+
+@media(max-width:600px){
+   .skeleten-container>.item>.message{
+    width: 170px;
+    height: 45px;
+   } 
+}
+
+.loading_container{
+    border-bottom: 3px solid var(--color);
+    border-top: 3px solid var(--color);
+    border-left: 3px solid var(--color);
+    border-right: 3px solid transparent;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    animation: loadingScroll 1s ease-in-out infinite;
+}
+@keyframes loadingScroll{
+    form{
+     transform: rotate(0);
+     
+    }to{
+        transform: rotate(360deg);
+    }
+}

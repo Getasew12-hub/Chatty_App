@@ -1,0 +1,150 @@
+.converstation_messages>.messages{
+    overflow-y: auto;
+    max-height: 73vh;
+    /* max-width: 850px; */
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.converstation_messages>.messages::-webkit-scrollbar{
+    background: var(--chat);
+    width: 5px;
+    border-radius: 40px;
+}
+.converstation_messages>.messages::-webkit-scrollbar-thumb{
+    background-color: var(--background);
+    border-radius: 40px;
+}
+.converstation_messages>.messages>.each-message{
+    /* display:inline-flex; */
+   display: flex;
+  gap: 10px;
+   align-items: flex-end;
+   padding: 0 10px;
+  
+ 
+}
+.each-message>.img{
+    height: 40px;
+    width: 40px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+     background: var(--chat);
+     font-weight: bold;
+     font-size: 30px;
+     box-sizing: border-box;
+}
+.each-message>.img>img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.samllloading{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.converstation_messages>.messages>.each-message>.messages{
+    
+    width: fit-content;
+    max-width:350px ;
+    background-color: var(--background);
+    border-radius: 10px;
+    padding: 10px 15px;
+    position: relative;
+    margin: 20px;
+    word-wrap: break-word;
+    /* overflow: hidden; */
+ 
+    
+    
+}
+.each-message>.messages>.date{
+    position: absolute;
+    top: -23px;
+    color: gray;
+}
+.imagchat{
+    max-height: 150px;
+    max-width: 100%;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.converstation_messages>.messages>.each-message>.leftmessage>.date{
+    left: 0;
+}
+.converstation_messages>.messages>.each-message>.rightmessage>.date{
+    right: 0;
+}
+.converstation_messages>.messages>.each-message>.leftmessage::before{
+    content: '';
+   
+     position: absolute;
+     height: 20px;
+     width: 30px;
+     border-bottom: 17px solid ;
+     transform: rotate(-55deg) ;
+      border-color: var(--background);
+     bottom: -13px;
+
+     border-bottom-left-radius:60px;
+    
+     left: -15px;
+    
+
+}
+.converstation_messages>.messages>.each-message>.rightmessage{
+    order: -1;
+}
+.converstation_messages>.messages>.each-message>.rightmessage::after{
+    content: '';
+   
+     position: absolute;
+     height: 20px;
+     width: 30px;
+     border-bottom: 17px solid ;
+     transform: rotate(55deg) ;
+      border-color: var(--background);
+     bottom: -13px;
+
+     border-bottom-right-radius:60px;
+    
+     right: -15px;
+    
+
+}
+
+.leftmessage{
+    justify-content: flex-start;
+}
+.rightmessage{
+    justify-content: flex-end;
+}
+@media(max-width:750px){
+    .converstation_messages>.messages>.each-message>.messages{
+       max-width: 250px;
+        
+    }
+    .converstation_messages>.messages>.each-message>.rightmessage{
+        margin-left: 100px;
+    }
+    .converstation_messages>.messages>.each-message>.leftmessage{
+        margin-right: 100px;
+    }
+    .converstation_messages>.messages>.each-message{
+        gap: 0;
+    }
+}
+@media(max-width:500px){
+    
+}

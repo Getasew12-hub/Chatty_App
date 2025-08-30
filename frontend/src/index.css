@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+:root{
+  --background:rgb(23, 29, 35);
+  --color:white;
+  --primary:gray;
+  --icon:gray;
+  --secondary:rgb(17, 17, 17);
+  --third:rgb(38, 43, 47);
+  --navhead:bisque;
+  --chat:rgb(255, 255, 255,0.2);
+
+}
+body.light{
+  --background:rgb(146, 135, 119);
+  --color:black;
+  --primary:rgb(180, 179, 178);
+  --icon:black;
+  --secondary:blanchedalmond;
+  --third:blanchedalmond;
+  --navhead:black;
+  --chat:rgb(128, 128, 128,0.5);
+   
+}
+body{
+  background:var(--background);
+  color:var(--navhead);
+  padding: 45px 0;
+  overflow: hidden;
+
+}
+
+/* .dark{
+  background-color: rgb(23, 29, 35);
+  color: white;
+  border-color: gray;
+}
+.light{
+  background: rgb(146, 135, 119);
+  color: black !important;
+  border-color: black !important;
+} */

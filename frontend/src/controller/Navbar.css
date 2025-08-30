@@ -1,0 +1,65 @@
+.navbar-container{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 3px 5px var(--third) ;
+    padding: 5px;
+      background: var(--background);
+    
+}
+
+.navbar-container>.item-contain{
+display: flex;
+    justify-content:space-between ;
+    padding: 0 70px;
+}
+.item-contain>.leftbar>a>div,
+.navbar-container>.item-contain>.rightbar{
+    display: flex;
+    gap: 25px;
+    color: var(--navhead);
+align-items: center;
+justify-content: center;
+
+}
+.rightbar>a>div,
+.item-contain>.rightbar>div{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+.rightbar>a{
+  text-decoration: none;
+  color: var(--navhead);
+}
+.leftbar>a>div>.icon{
+    background: rgb(255, 255, 255,0.2);
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    color: aqua;
+}
+.item-contain>.leftbar>a{
+    text-decoration: none;
+}
+.leftbar>a>div>.header{
+    font-weight: bold;
+    font-size: 28px;
+    font-family: 'Courier New', Courier, monospace;
+    color: aqua;
+}
+
+@media(max-width:800px){
+    .navbar-container>.item-contain>.rightbar>div>span,
+      .navbar-container>.item-contain>.rightbar>a>div>span,
+  .leftbar>a>div>.header{
+    display: none;
+  }  
+  .navbar-container>.item-contain{
+    padding: 0 10px;
+  }
+}

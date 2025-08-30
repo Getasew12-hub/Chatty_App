@@ -1,0 +1,7 @@
+.message-container{
+    width: 100%;
+    position: relative;
+    max-width: 850px;
+    border-right: 1px solid var(--primary);
+    overflow: hidden;
+}

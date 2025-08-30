@@ -1,0 +1,33 @@
+.header-container>.header{
+    border-bottom:1px solid var(--primary) ;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+     padding: 5px;
+}
+.header-container>.header>.image{
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+   
+    background: var(--chat);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.header-container>.header>.image>.username{
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+}
+.header-container>.header>.image>img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.header-container>.header>.discription{
+    font-size: 18px;
+}

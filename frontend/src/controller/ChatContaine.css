@@ -1,0 +1,39 @@
+.chat-containe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+.chat-containe>.chat{
+   
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.chat-containe>.chat>.iconcontaine{
+    background: var(--chat);
+    width:70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+ 
+    animation: chaticon 1s linear alternate infinite;
+
+}
+.chat-containe>.chat>.iconcontaine>.icon{
+    font-size: 50px;
+}
+.chat-containe>.chat>.select{
+    margin-top: 20px;
+}
+@keyframes chaticon{
+    from{
+       transform: translateY(-40px);
+    }to{
+      transform: translateY(0)
+    }
+}
