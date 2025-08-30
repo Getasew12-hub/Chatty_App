@@ -67,9 +67,9 @@ function textInput(e){
 }
 function chatSubmit(e){
 e.preventDefault();
-
-addMessages(selectUser.id,chat)
  imagePre.current.src=null;
+addMessages(selectUser.id,chat)
+
    clearImage.current.setAttribute('hidden','true')
 setChat({
      text:"",
