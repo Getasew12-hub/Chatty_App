@@ -4,7 +4,7 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-   
+ 
 }
 
 .converstation_messages>.messages{
@@ -156,3 +156,8 @@
     }
 }
 
+@media(max-width:500px){
+    .converstation_messages{
+        padding-bottom: 90px;
+    }
+}

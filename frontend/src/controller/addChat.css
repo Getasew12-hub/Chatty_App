@@ -55,3 +55,9 @@
     z-index: 50;
 }
 
+@media(max-width:500px){
+    .addchat-container{
+    position: fixed;
+    bottom: 10px;
+    }
+}
