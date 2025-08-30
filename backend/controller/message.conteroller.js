@@ -14,15 +14,15 @@ export const getLeftuser=async (req,res) => {
 
 export const getMessage=async (req,res) => {
     try {
-        console.log(req.body)
+        
         const reciver=parseInt(req.params.id);
        const {offcet}=req.body
         const myid=req.user.id;
       
         const message=await db.query('SELECT * FROM messages WHERE (userid=$1 AND touser=$2) OR (userid=$3 AND  touser=$4 ) ORDER BY create_at DESC LIMIT 10 OFFSET $5;',[myid,reciver,reciver,myid,offcet]);
-   
-   
-  console.log(message.rows)
+
+  
+
         return res.status(200).json(message.rows)
 
        

@@ -6,7 +6,7 @@ import {Skeletn,UserSkeleton,Loadding} from "../libe/skeletn"
 
 function AllMessages() {
     const chatcontainer=useRef()
-const {message,selectUser,onlinechat,isMesssageLoad,getPreviosMessage,ScrollWork,SmallLoad}=chatStore()
+const {message,selectUser,call,isMesssageLoad,getPreviosMessage,ScrollWork,SmallLoad}=chatStore()
 const {user}=userStore()
 
 
@@ -19,8 +19,11 @@ useEffect(()=>{
 function messageScroll(){
  
   if((-chatcontainer.current.scrollTop + chatcontainer.current.clientHeight+10)>= chatcontainer.current.scrollHeight){
-    console.log("now i am call")
+   
+    if(call){
+   
     getPreviosMessage(selectUser)
+  }
   }
 }
 

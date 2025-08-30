@@ -15,7 +15,7 @@ const chatStore=create((set,get)=>({
     finalLoadMessage:false,
    SmallLoad:false,
    ScrollWork:true,
-
+ call:true,
     getUsers:async () => {
        
         set({isUserlodding:true})
@@ -32,20 +32,21 @@ const chatStore=create((set,get)=>({
     },
     getMessages:async (val) => {
        
-         if(get().selcteuser!==val.id){
-            set({message:[],finalLoadMessage:false,offcet:0})
+         if(get().selectUser?.id!==val.id){
+         
+            set({message:[],finalLoadMessage:false,offcet:0,addmesLoad:false})
          }
         set({isMesssageLoad:true,selectUser:val,ScrollWork:false,SmallLoad:false});
       
         const id=val?.id;
         try {
-             const offcet=get().offcet
+             const offcet=get().offcet;
            
             const res=await axios.post(`/message/message/${id}`,{offcet});
        
-            console.log("the respone data is this now i get most",res.data)
-             set({offcet:get().offcet+res.data.length})
-            set({message:res.data})
+            // console.log("the respone data is this now i get most",res.data)
+            set({offcet:get().offcet+res.data.length})
+            set({message:res.data,call:true})
         } catch (error) {
             console.log("error on get message ",error)
         }finally{
@@ -55,25 +56,34 @@ const chatStore=create((set,get)=>({
     },
     getPreviosMessage:async (val) => {
          if(get().finalLoadMessage) return
-
-         set({SmallLoad:true,ScrollWork:false})
+              
+            if(get().selectUser.id!==val.id){
+            set({message:[],finalLoadMessage:false,offcet:0,addmesLoad:false})
+         }
+         set({SmallLoad:true,ScrollWork:false,call:false})
          const id=val?.id;
-         
+             
         try {
-             const offcet=get().offcet
+         
+           
+             const offcet=get().offcet;
             const res=await axios.post(`/message/message/${id}`,{offcet});
-        
+           
              if(res.data.length==0){
-              return set({finalLoadMessage:true,SmallLoad:false})
+              return set({finalLoadMessage:true,SmallLoad:false,call:false})
              }
-             set({offcet:get().offcet+res.data.length,SmallLoad:false})
-            set({message:[...get().message,...res.data]})
+        set({offcet:get().offcet+res.data.length})
+
+             set({SmallLoad:false})
+            set({message:[...get().message,...res.data],call:true})
+        
         } catch (error) {
             console.log('error on ger previos message',error);
               set({SmallLoad:false})
         }
     },
     addMessages:async (id,val) => {
+        
          set({addmesLoad:true,ScrollWork:true})
         try {
             let {text,img}=val
@@ -106,6 +116,7 @@ const chatStore=create((set,get)=>({
     socket.on('nesMessage',(message)=>{
         
         if(message.userid!==selcteuser.id) return
+        
         set((pre)=>({
             message:[message,...pre.message]
         }))
