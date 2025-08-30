@@ -5,6 +5,7 @@
     box-shadow: 0 3px 5px var(--third) ;
     padding: 5px;
       background: var(--background);
+      z-index: 100;
     
 }
 

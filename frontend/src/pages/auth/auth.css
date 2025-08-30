@@ -144,6 +144,7 @@ color: white;
     .form-container>.signup-form{
         flex-basis: 100%;
         padding: 0 10px;
+        transform: translateY(-50px);
     }
     .signup-form>form{
         width: 100%;

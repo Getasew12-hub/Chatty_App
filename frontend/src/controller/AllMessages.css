@@ -1,6 +1,6 @@
 .converstation_messages>.messages{
     overflow-y: auto;
-    max-height: calc(100vh - 200px);
+    max-height: 75vh;
   
     width: 100%;
     display: flex;

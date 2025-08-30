@@ -59,6 +59,7 @@ login:async (val) => {
             set({smallLoad:false,user:null})
             toast.success("Successfully logout")
              get().disconnectionSocket()
+             location.reload()
         } catch (error) {
             toast.error(error.response.data.error || "Faild to loglut")
             set({smallLoad:false})
