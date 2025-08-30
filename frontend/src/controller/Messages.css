@@ -4,7 +4,8 @@
     max-width: 850px;
     border-right: 1px solid var(--primary);
     overflow: hidden;
-   
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
    padding-top: 40px ;
     height: 100vh ;
