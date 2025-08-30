@@ -54,3 +54,9 @@
     cursor: pointer;
     z-index: 50;
 }
+
+@media(max-width:500px){
+    .addchat-container{
+        bottom: 50px;
+    }
+}
