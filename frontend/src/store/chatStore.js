@@ -93,9 +93,10 @@ const chatStore=create((set,get)=>({
           }))
           console.log("the new messages :",get().message)
           const res= await axios.post(`/message/send/${id}`,{text,img}) 
+            set({offcet:get().message.length})
           set((pre)=>{
             const newmessage=pre.message.slice(1);
-           console.log("after new message we get thus",newmessage)
+           
              return{
                 message:[res.data,...newmessage]
              }
