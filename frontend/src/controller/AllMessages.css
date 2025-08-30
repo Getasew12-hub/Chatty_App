@@ -1,7 +1,17 @@
+
+.converstation_messages{
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+   
+}
+
 .converstation_messages>.messages{
     overflow-y: auto;
-    max-height: 75vh;
-   flex-grow: 1;
+    flex-grow: 1;
+  
+  
     width: 100%;
     display: flex;
     flex-direction: column-reverse;
@@ -29,7 +39,7 @@
     width: 40px;
     flex-grow: 0;
     flex-shrink: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,7 +87,7 @@
     max-width: 100%;
     border-radius: 5px;
     box-sizing: border-box;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin-bottom: 10px;
 }
 .converstation_messages>.messages>.each-message>.leftmessage>.date{

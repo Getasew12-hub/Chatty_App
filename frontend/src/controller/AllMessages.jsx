@@ -17,9 +17,7 @@ useEffect(()=>{
    }
 },[message])
 function messageScroll(){
-  console.log("scroll message is this",chatcontainer.current.scrollTop)
-  console.log("second",chatcontainer.current.clientHeight)
-  console.log("second",chatcontainer.current.scrollHeight)
+ 
   if((-chatcontainer.current.scrollTop + chatcontainer.current.clientHeight+10)>= chatcontainer.current.scrollHeight){
     console.log("now i am call")
     getPreviosMessage(selectUser)

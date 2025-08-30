@@ -5,6 +5,7 @@
     align-items: center;
     gap: 5px;
      padding: 5px;
+     margin-top: 40px;
 }
 .header-container>.header>.image{
     height: 50px;

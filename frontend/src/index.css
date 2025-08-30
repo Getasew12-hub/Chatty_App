@@ -27,18 +27,8 @@ body.light{
 body{
   background:var(--background);
   color:var(--navhead);
- 
-  overflow: hidden;
+ height: 100%;
+  /* overflow: hidden; */
 
 }
 
-/* .dark{
-  background-color: rgb(23, 29, 35);
-  color: white;
-  border-color: gray;
-}
-.light{
-  background: rgb(146, 135, 119);
-  color: black !important;
-  border-color: black !important;
-} */
