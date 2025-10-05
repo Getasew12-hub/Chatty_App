@@ -24,9 +24,14 @@ function homePage() {
 
   return ()=> removeEventListener('resize',resize);
   },[])
+
+
+  
 useEffect(()=>{
   setSize(innerWidth)
 },[windowSize])
+
+
   useEffect(()=>{
     window.addEventListener('popstate',(event)=>{
      

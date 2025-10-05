@@ -3,11 +3,14 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import { v2 as cloudinary } from 'cloudinary';
 import env from "dotenv";
+import job from "./cron.js";
 
 import authRouther from "./routher/auth.routher.js"
 import messageRouter from "./routher/message.router.js"
 import {app,server} from "./libe/socket.js"
 env.config()
+
+job.start()
 const __dirname=path.resolve();
 
 const port=5000;

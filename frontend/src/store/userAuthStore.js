@@ -86,7 +86,7 @@ login:async (val) => {
 
     connectionSocket:async () => {
         const autheuser=get().user;
-        if(!autheuser || get.socket?.connected) return;
+        if(!autheuser || get().socket?.connected) return;
         const socket=io(BASE_URL,{
             query:{
                 userId:autheuser.id
