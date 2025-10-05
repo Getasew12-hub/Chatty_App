@@ -15,5 +15,4 @@ const job =new CronJob(`*/14****`,function(){
     })
 })
 
-
 export default job;
