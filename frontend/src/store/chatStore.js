@@ -17,7 +17,7 @@ const chatStore=create((set,get)=>({
    ScrollWork:true,
  call:true,
     getUsers:async () => {
-       
+       if(get().users.length>0) return;
         set({isUserlodding:true})
         try {
            
