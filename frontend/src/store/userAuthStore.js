@@ -12,6 +12,8 @@ const userStore =create((set,get)=>({
     editLoad:null,
    socket:null,
    onlineUser:[],
+
+   
    signUp:async (val) => {
     const {password,email,fullname}=val
      if(password.length<6) return toast.error('password needed at least 6 characters')

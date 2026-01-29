@@ -4,6 +4,7 @@ import path from "path";
 import { v2 as cloudinary } from 'cloudinary';
 import env from "dotenv";
 import job from "./cron.js";
+import cors from "cors";
 
 import authRouther from "./routher/auth.routher.js"
 import messageRouter from "./routher/message.router.js"
@@ -24,18 +25,24 @@ const port=5000;
 app.use(express.urlencoded({extended:true}));
 app.use(express.json({limit:'10mb'}))
 app.use(cookieParser());
+app.use(cors({
+    origin:[process.env.FRONTEND_URL],
+    credentials:true,
+}))
 
-
+app.get('/',(req,res)=>{
+    res.send("api running")
+})
 app.use('/api/auth',authRouther)
 app.use('/api/message',messageRouter)
 
-if(process.env.NODE_ENV=='production'){
-    app.use(express.static(path.join(__dirname,'frontend/dist')));
+// if(process.env.NODE_ENV=='production'){
+//     app.use(express.static(path.join(__dirname,'frontend/dist')));
 
-    app.use((req,res)=>{
-        res.sendFile(path.join(__dirname,'fontend','dist','index.html'))
-    })
-}
+//     app.use((req,res)=>{
+//         res.sendFile(path.join(__dirname,'fontend','dist','index.html'))
+//     })
+// }
 
 server.listen(port,()=>{
     console.log(`server running on port:${port}`)
