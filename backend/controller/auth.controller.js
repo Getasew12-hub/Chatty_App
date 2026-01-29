@@ -22,7 +22,7 @@ const setCookies=async (res,token) => {
   
     res.cookie('jwt',token,{
         httpOnly:true,
-        sameSite:'none',
+        sameSite:'strict',
         secure:true,
         maxAge:1000*60*60*24*7
     })
@@ -95,13 +95,8 @@ export const login =async (req,res) => {
 export const logout =async (req,res) => {
     try {
        
-     const cookieOptions={
-        httpOnly:true,
-        sameSite:'none',
-        secure:true,
-        path:'/',
-     }
-      res.clearCookie('jwt',cookieOptions);
+     
+      res.clearCookie('jwt')
          return res.status(200).json({message:"Logout seccessfully"})
     } catch (error) {
       console.log('error on logout',error.message);
