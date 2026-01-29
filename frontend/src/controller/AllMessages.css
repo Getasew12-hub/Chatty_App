@@ -48,6 +48,7 @@
      font-weight: bold;
      font-size: 30px;
      box-sizing: border-box;
+        overflow: hidden;
 }
 .each-message>.img>img{
     height: 100%;
