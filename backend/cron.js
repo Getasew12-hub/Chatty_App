@@ -1,7 +1,7 @@
 import { CronJob } from "cron";
 import https from "https"
 
-const url='https://chatty-app-btbh.onrender.com/';
+const url='https://chatty-app-9h1d.onrender.com/';
 
 const job =new CronJob('0 */14 * * * *',function(){
     https.get(url,(res)=>{
